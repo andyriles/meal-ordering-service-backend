@@ -222,8 +222,6 @@ List of available routes:
 `PATCH /v1/meals/:mealId` - update meal\
 `DELETE /v1/meals/:mealId` - delete meal
 
-- [hagopj13/node-express-boilerplate](https://github.com/hagopj13/node-express-boilerplate.git)
-
 ## License
 
 [MIT](LICENSE)
