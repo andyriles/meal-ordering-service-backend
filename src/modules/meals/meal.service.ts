@@ -17,7 +17,7 @@ export const queryMeals = async (filter: Record<string, any>, options: IOptions)
 };
 
 /**
- * Create a user
+ * Create a meal
  * @param {IMeal} mealBody
  * @returns {Promise<IMeal>}
  */
@@ -40,8 +40,8 @@ export const getMealById = async (id: mongoose.Types.ObjectId): Promise<IMeal | 
  * @param {IMeal} updateBody
  * @returns {Promise<IMeal | null>}
  */
-export const updateMealById = async (userId: mongoose.Types.ObjectId, updateBody: IMeal): Promise<IMeal | null> => {
-  const meal = await getMealById(userId);
+export const updateMealById = async (mealId: mongoose.Types.ObjectId, updateBody: IMeal): Promise<IMeal | null> => {
+  const meal = await getMealById(mealId);
   if (!meal) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Meal not found');
   }
@@ -51,7 +51,7 @@ export const updateMealById = async (userId: mongoose.Types.ObjectId, updateBody
 };
 
 /**
- * Delete user by id
+ * Delete meal by id
  * @param {mongoose.Types.ObjectId} mealId
  * @returns {Promise<IMeal | null>}
  */
