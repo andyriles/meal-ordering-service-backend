@@ -14,7 +14,7 @@ export const createMenu = catchAsync(async (req: Request, res: Response) => {
 
 export const queryMenu = catchAsync(async (req: Request, res: Response) => {
   const filter = pick(req.query, ['name', 'price']);
-  const options: IOptions = pick(req.query, ['sortBy', 'limit', 'page']);
+  const options: IOptions = pick(req.query, ['sortBy', 'limit', 'page', 'populate']);
   const result = await menuService.queryMenu(filter, options);
   res.send(result);
 });

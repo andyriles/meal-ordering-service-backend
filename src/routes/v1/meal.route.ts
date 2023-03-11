@@ -7,8 +7,8 @@ const router: Router = express.Router();
 
 router
   .route('/')
-  .post(auth('manageMeals'), validate(mealValidation.createMeal), mealController.addMeal)
-  .get(auth('getMeals'), validate(mealValidation.getMeals), mealController.queryMeals);
+  .post(validate(mealValidation.createMeal), mealController.addMeal)
+  .get(validate(mealValidation.getMeals), mealController.queryMeals);
 
 router
   .route('/:mealId')

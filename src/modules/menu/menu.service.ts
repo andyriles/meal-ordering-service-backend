@@ -13,7 +13,7 @@ import { IMenu } from './menu.interface';
 export const createMenu = async (menuBody: IMenu): Promise<IMenu> => {
   const menu = new Menu(menuBody);
   const createdMenu = await menu.save();
-  return createdMenu;
+  return createdMenu.populate('meals');
 };
 
 /**
@@ -27,13 +27,13 @@ export const queryMenu = async (filter: Record<string, any>, options: IOptions):
   return menu;
 };
 
-export const getMenuById = async (id: mongoose.Types.ObjectId): Promise<IMenu | null> => Menu.findById(id);
+export const getMenuById = async (id: mongoose.Types.ObjectId): Promise<IMenu | null> => Menu.findById(id).populate('meals');
 
 /**
- * Update meal by id
- * @param {mongoose.Types.ObjectId} mealId
- * @param {IMeal} updateBody
- * @returns {Promise<IMeal | null>}
+ * Update menu by id
+ * @param {mongoose.Types.ObjectId} menuId
+ * @param {IMenu} updateBody
+ * @returns {Promise<IMenu | null>}
  */
 export const updateMenuById = async (menuId: mongoose.Types.ObjectId, updateBody: IMenu): Promise<IMenu | null> => {
   const menu = await getMenuById(menuId);
@@ -46,7 +46,7 @@ export const updateMenuById = async (menuId: mongoose.Types.ObjectId, updateBody
 };
 
 /**
- * Delete user by id
+ * Delete menu by id
  * @param {mongoose.Types.ObjectId} menuId
  * @returns {Promise<IMenu | null>}
  */

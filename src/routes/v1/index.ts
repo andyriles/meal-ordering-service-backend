@@ -3,6 +3,7 @@ import authRoute from './auth.route';
 import docsRoute from './swagger.route';
 import userRoute from './user.route';
 import mealRoute from './meal.route';
+import menuRoute from './menu.route';
 import config from '../../config/config';
 
 const router = express.Router();
@@ -24,6 +25,10 @@ const defaultIRoute: IRoute[] = [
   {
     path: '/meals',
     route: mealRoute,
+  },
+  {
+    path: '/menu',
+    route: menuRoute,
   },
 ];
 
