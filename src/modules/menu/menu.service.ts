@@ -38,7 +38,7 @@ export const getMenuById = async (id: mongoose.Types.ObjectId): Promise<IMenu | 
 export const updateMenuById = async (menuId: mongoose.Types.ObjectId, updateBody: IMenu): Promise<IMenu | null> => {
   const menu = await getMenuById(menuId);
   if (!menu) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'Meal not found');
+    throw new ApiError(httpStatus.NOT_FOUND, 'Menu not found');
   }
   Object.assign(menu, updateBody);
   await menu.save();
