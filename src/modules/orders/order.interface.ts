@@ -12,3 +12,5 @@ export interface IOrder extends Document {
 export interface IOrderModel extends Model<IOrder> {
   paginate(filter: Record<string, any>, options: Record<string, any>): Promise<QueryResult>;
 }
+
+export type UpdateOrderBody = Partial<IOrder>;

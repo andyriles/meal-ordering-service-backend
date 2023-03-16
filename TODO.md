@@ -8,4 +8,5 @@
 
 - [x] Have faker.js as a dev dependency
 - [ ] Add Cookie Support
-- [ ] Add crud endpoints for menu and orders
+- [x] Add crud endpoints for menu and orders
+- [ ] Add tests for menu, meals and order endpoints

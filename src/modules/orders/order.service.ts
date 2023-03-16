@@ -3,7 +3,7 @@ import httpStatus from 'http-status';
 import Order from './order.model';
 import ApiError from '../errors/ApiError';
 import { IOptions, QueryResult } from '../paginate/paginate';
-import { IOrder } from './order.interface';
+import { IOrder, UpdateOrderBody } from './order.interface';
 
 /**
  * Create an order
@@ -33,10 +33,13 @@ export const getOrderById = async (id: mongoose.Types.ObjectId): Promise<IOrder 
 /**
  * Update Order by id
  * @param {mongoose.Types.ObjectId} orderId
- * @param {IOrder} updateBody
+ * @param {UpdateOrderBody} updateBody
  * @returns {Promise<IOrder | null>}
  */
-export const updateOrderById = async (orderId: mongoose.Types.ObjectId, updateBody: IOrder): Promise<IOrder | null> => {
+export const updateOrderById = async (
+  orderId: mongoose.Types.ObjectId,
+  updateBody: UpdateOrderBody
+): Promise<IOrder | null> => {
   const order = await getOrderById(orderId);
   if (!order) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Order not found');

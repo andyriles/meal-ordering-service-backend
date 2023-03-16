@@ -19,6 +19,71 @@ components:
         name: fake name
         role: user
 
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: string
+        meals:
+          type: array
+          items:
+            type: string
+        owner:
+          type: string
+      example:
+        id: 5ebac534954b54139806c112
+        name: Breakfast
+        description: Food to give energy
+        price: 50000
+        meals:
+          - 640c5837b29c28da6b4a2583
+          - 640c5847b29c28da6b4a2585
+        owner: 640c9752d67639ae91fec0be
+
+    Menu:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: string
+        meals:
+          type: array
+          items:
+            type: string
+      example:
+        id: 5ebac534954b54139806c112
+        name: Breakfast
+        description: Food to give energy
+        price: 50000
+        meals:
+          - 640c5837b29c28da6b4a2583
+          - 640c5847b29c28da6b4a2585
+
+    Meal:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+      example:
+        id: 5ebac534954b54139806c112
+        name: Pap and Akara
+        description: Pap and fried bean cake
+
     Token:
       type: object
       properties:
