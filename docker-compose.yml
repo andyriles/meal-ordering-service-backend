@@ -6,12 +6,12 @@ services:
     image: mongo:4.2.1-bionic
     restart: always
     ports:
-      - "27018:27017"
+      - '27018:27017'
     networks:
       - backend
   app:
     container_name: ts-node-app
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
       target: base
@@ -21,16 +21,16 @@ services:
       - ${PORT}
     ports:
       - ${PORT}:${PORT}
-    environment: 
-      - MONGODB_URL=mongodb://mongo:27017/node-boilerplate
+    environment:
+      - MONGODB_URL=mongodb+srv://andyriles:erileee123@cluster0.gybslmt.mongodb.net/?retryWrites=true&w=majority
       - CLIENT_URL=${CLIENT_URL}
-    links: 
-      - mongo  
+    links:
+      - mongo
     depends_on:
-      - mongo  
+      - mongo
     networks:
       - backend
 
 networks:
   backend:
-    driver: bridge    
+    driver: bridge
