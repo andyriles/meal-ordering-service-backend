@@ -59,6 +59,6 @@ export const deleteOrderById = async (orderId: mongoose.Types.ObjectId): Promise
   if (!order) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Order not found');
   }
-  await order.remove();
+  await order.deleteOne();
   return order;
 };

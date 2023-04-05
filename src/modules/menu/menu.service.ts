@@ -55,6 +55,6 @@ export const deleteMenuById = async (menuId: mongoose.Types.ObjectId): Promise<I
   if (!menu) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Menu not found');
   }
-  await menu.remove();
+  await menu.deleteOne();
   return menu;
 };

@@ -60,6 +60,6 @@ export const deleteMealById = async (mealId: mongoose.Types.ObjectId): Promise<I
   if (!meal) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Meal not found');
   }
-  await meal.remove();
+  await meal.deleteOne();
   return meal;
 };
