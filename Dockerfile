@@ -23,7 +23,7 @@ COPY package.json yarn.lock ecosystem.config.json ./
 
 RUN yarn install --production --pure-lockfile
 
-COPY . .
+COPY --from=base /usr/src/app/dist ./dist
 
 EXPOSE 3000
 
