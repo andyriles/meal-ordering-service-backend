@@ -27,4 +27,4 @@ COPY --from=base /usr/src/app/dist ./dist
 
 EXPOSE 3000
 
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "start"]
