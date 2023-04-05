@@ -1,8 +1,8 @@
-FROM node:14-alpine as base
+FROM node:14-alpine
 
 WORKDIR /usr/prod/app
 
-ENV NODE_ENV=productio
+ENV NODE_ENV=production
 
 COPY package.json yarn.lock ecosystem.config.json ./
 
