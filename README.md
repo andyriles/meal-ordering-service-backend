@@ -222,6 +222,20 @@ List of available routes:
 `PATCH /v1/meals/:mealId` - update meal\
 `DELETE /v1/meals/:mealId` - delete meal
 
+**Menu routes**:\
+`POST /v1/menu` - create a menu\
+`GET /v1/menu` - get all menu\
+`GET /v1/menu/:menuId` - get menu\
+`PATCH /v1/menu/:menuId` - update menu\
+`DELETE /v1/menu/:menuId` - delete menu
+
+**Order routes**:\
+`POST /v1/order` - create a order\
+`GET /v1/order` - get all order\
+`GET /v1/order/:orderId` - get order\
+`PATCH /v1/order/:orderId` - update order\
+`DELETE /v1/order/:orderId` - delete order
+
 ## License
 
 [MIT](LICENSE)
